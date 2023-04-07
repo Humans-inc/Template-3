@@ -1,0 +1,64 @@
+.user-data {
+  --ud-color-bg: var(--color-secondary-bg);
+  --ud-color-balance-bg: var(--color-course-accent);
+  --ud-color-balance-text: var(--color-text-light);
+  --ud-color-name: var(--color-text);
+  --ud-color-mail: var(--color-description);
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  background: var(--ud-color-bg);
+  border-radius: 24px;
+  padding: 20px 24px;
+  margin: 0 auto 16px;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  position: relative;
+}
+.user-data__bonus {
+  position: absolute;
+  background: var(--ud-color-balance-bg);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--ud-color-balance-text);
+  top: -15px;
+  right: 0;
+}
+.user-data__name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.02em;
+  color: var(--ud-color-name);
+  align-self: end;
+  margin-bottom: 4px;
+}
+.user-data__mail {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.02em;
+  color: var(--ud-color-mail);
+  align-self: start;
+}
+.user-avatar-wrap {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-avatar {
+  width: 100%;
+  height: auto;
+}
