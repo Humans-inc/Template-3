@@ -1,0 +1,31 @@
+/* styled modules */
+#styled-modules .stream-table {
+    margin: 40px 0px;
+}
+#styled-modules .custom-module {
+    text-decoration: none;
+    background: var(--color-secondary-bg);
+    border-radius: 32px;
+    padding: 24px;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#styled-modules .stream-table tr td {
+    padding: 0px;
+}
+#styled-modules .stream-table .stream-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100.02%;
+    color: var(--color-text-subtitle);
+    margin-bottom: 20px;
+}
+#generated-modules {
+	margin: 40px 0px;
+}
+#styled-modules .stream-table tr td:hover {
+    background: transparent;
+}
