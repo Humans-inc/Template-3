@@ -1,1 +1,55 @@
+<main
+  class="main"
+  id="main"
+>
+  <div class="custom-header">
+    <!-- header content -->
+  </div>
+  <div class="custom-container-wrap">
+    <div class="custom-container">
+      <div class="user-data">
+        <div class="user-data__bonus">{balance_virtual} ₽</div>
+        <div class="user-avatar-wrap">
+          <img
+            src="{avatar_url}"
+            alt=""
+            class="user-avatar"
+            width="64"
+          />
+        </div>
+        <div class="user-data__name">{first_name}</div>
+        <div class="user-data__mail">{email}</div>
+      </div>
+      <input
+        type="radio"
+        name="tab"
+        id="courses"
+        class="custom-content__input"
+        checked=""
+      />
+      <label
+        for="courses"
+        class="custom-content__label custom-content__label_courses"
+        >Курсы</label
+      >
+      <div class="custom-content__content custom-content__content_courses">
+        <!-- main content -->
+      </div>
+      <input
+        type="radio"
+        name="tab"
+        id="dashboard"
+        class="custom-content__input"
+      />
+      <label
+        for="dashboard"
+        class="custom-content__label custom-content__label_dashboard"
+        >Дашборд</label
+      >
+      <div class="custom-content__content custom-content__content_dashboard custom-dashboard">
+        <!-- dashboard -->
+      </div>
+    </div>
+  </div>
+</main>
 
