@@ -1,0 +1,140 @@
+.custom-lessons,
+.lesson-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background: transparent;
+}
+@media (min-width: 767px) {
+  .custom-lessons,
+  .lesson-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .custom-lessons,
+  .lesson-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* styled-lessons */
+#styled-lessons .lesson-list {
+  background: transparent;
+  padding: 0px;
+}
+#styled-lessons .user-state-bg {
+  background: transparent;
+}
+#styled-lessons .lesson-list li {
+  margin: 0px;
+  border-radius: 32px;
+  overflow: hidden;
+}
+#styled-lessons .lesson-list li a {
+  border-radius: 32px;
+}
+#styled-lessons .lesson-list li .info {
+  margin-left: 0px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--color-secondary-bg);
+}
+#styled-lessons .lesson-list li.user-state-reached .info {
+  background: var(--color-secondary-bg);
+}
+#styled-lessons .lesson-list li.user-state-accomplished .info {
+  background: var(--color-accomplished);
+}
+#styled-lessons .lesson-list li.user-state-answered .info {
+  background: var(--color-answered);
+}
+#styled-lessons .lesson-list li.user-state-has_mission .info {
+  background: var(--color-header-bg);
+}
+#styled-lessons .lesson-list li.user-state-need_accomplish .info {
+  background: var(--color-need_accomplish);
+}
+#styled-lessons .lesson-list li .state-icon-block {
+  display: none;
+}
+#styled-lessons .lesson-list li.divider {
+  display: none;
+}
+#styled-lessons .lesson-list li table td {
+  min-height: 330px;
+  padding: 0px;
+  display: flex;
+}
+#styled-lessons .lesson-list li .info .vmiddle {
+  display: flex;
+  padding-right: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 1 100%;
+  padding: 24px;
+}
+#styled-lessons .lesson-list li .info .vmiddle::before {
+  display: inline-block;
+  content: '';
+  background: var(--color-text-subtitle);
+  border-radius: 70px;
+  padding: 4px 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.03em;
+  color: var(--color-secondary-bg);
+  margin-bottom: 20px;
+}
+#styled-lessons .lesson-list li.user-state-reached .info .vmiddle::before {
+  content: 'Доступен';
+}
+#styled-lessons .lesson-list li.user-state-accomplished .info .vmiddle::before {
+  content: 'Принят';
+}
+#styled-lessons .lesson-list li.user-state-answered .info .vmiddle::before {
+  content: 'На проверке';
+}
+#styled-lessons .lesson-list li.user-state-has_mission .info .vmiddle::before {
+  content: 'Есть задание';
+}
+#styled-lessons .lesson-list li.user-state-need_accomplish .info .vmiddle::before {
+  content: 'Стоп-урок';
+}
+#styled-lessons .lesson-list li.user-state-not_reached .info .vmiddle::before {
+  content: 'Закрыт';
+}
+#styled-lessons .lesson-list li.user-state-not_reached {
+  pointer-events: none;
+}
+#styled-lessons .lesson-list .user-state-label {
+  display: none;
+}
+#styled-lessons .lesson-list li .title {
+  margin-right: 0px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100.02%;
+  color: var(--color-text-subtitle);
+  margin-bottom: 20px;
+}
+#styled-lessons .lesson-list li .description {
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--color-text-subtitle);
+  margin-bottom: 20px;
+}
+#styled-lessons .lesson-list li.user-state-not_reached .description,
+#styled-lessons .lesson-list li.user-state-not_reached .title {
+  opacity: 0.6;
+}
+#styled-lessons .lesson-list li table {
+  min-height: auto;
+  min-width: auto;
+}
