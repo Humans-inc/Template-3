@@ -30,9 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         scalesContainer.append(scale);
 
-        let userProgress = Math.round((+item.points.split(' ')[0] / +item.maxValue) * 100);
+        let userProgress = Math.round((+item.points.split(' ')[0] / +item.maxValue) * 100) > 100 ? 100 : Math.round((+item.points.split(' ')[0] / +item.maxValue) * 100);
         scale.querySelector('.custom-progress__percent').innerText = `${userProgress}%`;
         scale.querySelector('.custom-progress__scale').style.width = `${userProgress}%`;
+
       });
     });
 });
