@@ -1,39 +1,43 @@
+function declOfNum(n, text_forms) {
+  n = Math.abs(n) % 100;
+  var n1 = n % 10;
+  if (n > 10 && n < 20) {
+    return text_forms[2];
+  }
+  if (n1 > 1 && n1 < 5) {
+    return text_forms[1];
+  }
+  if (n1 == 1) {
+    return text_forms[0];
+  }
+  return text_forms[2];
+}
+const textForms = ['задание', 'задания', 'заданий'];
 document.addEventListener('DOMContentLoaded', () => {
-  const SCALE_LINK = '/teach/control/stream/view/id/711810321';
-  const scalesContainer = document.querySelector('.custom-dashboard');
-  fetch(SCALE_LINK)
-    .then((res) => res.text())
-    .then((data) => {
-      let html = document.createElement('div');
-      html.innerHTML = data;
-      let scales = html.querySelectorAll('.xdget-trainingAchievements tbody tr');
-      let scalesData = Array.from(scales).map((item) => {
-        return {
-          name: item.querySelector('a').innerText.split('/')[0].trim(),
-          points: item.querySelector('.badge').innerText,
-          maxValue: item.querySelector('a').innerText.split('/')[1].trim(),
-        };
-      });
-      console.log(scalesData);
-      scalesData.forEach((item, index) => {
-        let scale = document.createElement('div');
-        scale.classList.add('custom-progress');
-        scale.innerHTML = `
-          <div class="custom-progress__header">
-            <div class="custom-progress__title">${item.name}</div>
-            <div class="custom-progress__description">${item.points}</div>
-            <div class="custom-progress__percent">60%</div>
-          </div>
-          <div class="custom-progress__scale-wrap">
-            <div class="custom-progress__scale"></div>
-          </div>
-        `;
-        scalesContainer.append(scale);
+  let userPoint = 0;
+  let allPoint = 0;
+  let scale = 0;
+  const scaleName = 'Достижения';
+  let scales = document.querySelectorAll('#user-progress tbody tr');
+  scales.forEach((item) => {
+    if (item.querySelector('a').innerText.includes(scaleName)) {
+      userPoint = +item.querySelector('.badge').innerText.split(' ')[0];
+      let scaleNameArr = item.querySelector('a').innerText.split('/');
+      allPoint = +scaleNameArr[scaleNameArr.length - 1];
+      scale = Math.round((userPoint / allPoint) * 100) > 100 ? 100 : Math.round((userPoint / allPoint);
+    }
+  });
 
-        let userProgress = Math.round((+item.points.split(' ')[0] / +item.maxValue) * 100) > 100 ? 100 : Math.round((+item.points.split(' ')[0] / +item.maxValue) * 100);
-        scale.querySelector('.custom-progress__percent').innerText = `${userProgress}%`;
-        scale.querySelector('.custom-progress__scale').style.width = `${userProgress}%`;
+  document.querySelector('.custom-header .custom-progress__percent').innerText = `${scale}%`;
+  document.querySelector('.custom-header .custom-progress__scale').style.width = `${scale}%`;
 
-      });
-    });
+  if (document.querySelector('.custom-header__task')) {
+    document.querySelector('.custom-header__task').innerHTML = `
+      ${userPoint} из ${allPoint}
+      <div class="custom-header__units">
+      ${declOfNum(userPoint, textForms)}
+      </div>
+    `;
+  }
+
 });
