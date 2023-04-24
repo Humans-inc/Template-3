@@ -5,4 +5,5 @@ document.addEventListener('load', () => {
   } else {
     document.querySelector('.user-data__bonus').innerText = `${userBalance} ₽`;
   }
+  document.querySelector(".user-avatar-wrap > img").src = document.querySelector(".user-avatar-wrap > img").src.replace('50x50', '110x110');
 });
