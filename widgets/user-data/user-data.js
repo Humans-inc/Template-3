@@ -1,4 +1,4 @@
-document.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   let userBalance = document.querySelector('#balance_virtual').innerText.trim();
   if (!userBalance) {
     document.querySelector('.user-data__bonus').style.display = 'none';
