@@ -1,0 +1,56 @@
+.custom-progress {
+  --p-color-title: var(--color-text-subtitle);
+  --p-color-decription: var(--color-description);
+  --p-color-scale-bg: var(--color-scale-bg);
+  --p-color-scale: var(--color-course-accent);
+  display: flex;
+  flex-direction: column;
+}
+.custom-progress:not(:last-child) {
+  margin-bottom: 24px;
+}
+.custom-progress__header {
+  position: relative;
+}
+.custom-progress__title {
+  max-width: 70%;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  color: var(--p-color-title);
+}
+.custom-progress__description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.02em;
+  color: var(--p-color-decription);
+}
+.custom-progress__percent {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--p-color-title);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.custom-progress__scale-wrap {
+  width: 100%;
+  background: var(--color-scale-bg);
+  border-radius: 20px;
+  height: 8px;
+  margin-top: 8px;
+}
+.custom-progress__scale {
+  background-color: var(--p-color-scale);
+  border-radius: 20px;
+  height: 8px;
+  width: 60%;
+  max-width: 100%;
+}
