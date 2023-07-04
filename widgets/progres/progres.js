@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       userPoint = +item.querySelector('.badge').innerText.split(' ')[0];
       let scaleNameArr = item.querySelector('a').innerText.split('/');
       allPoint = +scaleNameArr[scaleNameArr.length - 1];
-      scale = Math.round((userPoint / allPoint) * 100) > 100 ? 100 : Math.round((userPoint / allPoint);
+      scale = Math.round((userPoint / allPoint) * 100) > 100 ? 100 : Math.round((userPoint / allPoint));
     }
   });
 
